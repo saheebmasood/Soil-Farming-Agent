@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Farming Agent</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+    <h1>Soil Farming Agent</h1>
+
+    <!-- Authentication Section -->
+    <div class="container">
+        <h2>Login / Register</h2>
+        <input type="email" id="email" placeholder="Enter email">
+        <input type="password" id="password" placeholder="Enter password">
+        <select id="role">
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+        </select>
+        <button onclick="register()">Register</button>
+        <button onclick="login()">Login</button>
+        <button id="logout-btn" onclick="logout()" style="display:none;">Logout</button>
+    </div>
+
+    <!-- Admin Panel (Only visible to Admin) -->
+    <div id="admin-section" class="container" style="display: none;">
+        <h2>Admin Panel</h2>
+
+        <!-- Post Soil Details -->
+        <h3>Post Soil Details</h3>
+        <input type="text" id="soil-name" placeholder="Soil Name">
+        <input type="text" id="crop-type" placeholder="Best for Crops">
+        <button onclick="postSoilDetails()">Post Soil Details</button>
+
+        <!-- Post Distributor Details -->
+        <h3>Post Distributor Details</h3>
+        <input type="text" id="distributor-name" placeholder="Distributor Name">
+        <input type="text" id="location" placeholder="Location">
+        <input type="text" id="distributor-phone" placeholder="Phone Number">
+        <input type="email" id="distributor-email" placeholder="Email Address">
+        <button onclick="postDistributorDetails()">Post Distributor Details</button>
+    </div>
+
+    <!-- User Panel (Visible to both Admin and Users) -->
+    <div id="user-section" class="container" style="display: none;">
+        <!-- View Soil Details -->
+        <h2>Soil Information</h2>
+        <button onclick="viewSoilDetails()">View Soil Details</button>
+        <ul id="soil-list"></ul>
+
+        <!-- View Distributor Details -->
+        <h2>Distributor Information</h2>
+        <button onclick="viewDistributorDetails()">View Distributor Details</button>
+        <ul id="distributor-list"></ul>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
